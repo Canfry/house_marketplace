@@ -30,6 +30,19 @@ const Listing = () => {
     fetchListing();
   }, [navigate, params.listingId]);
 
-  return <div>Listing</div>;
+  return (
+    <main>
+      {/* SLIDER */}
+      <div
+        className='shareIcon'
+        onClick={() => {
+          navigator.clipboard.writeText(window.location.href);
+          console.log(window.location.href);
+        }}
+      >
+        <img src={ShareIcon} alt='share icon' />
+      </div>
+    </main>
+  );
 };
 export default Listing;
