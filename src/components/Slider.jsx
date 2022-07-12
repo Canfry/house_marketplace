@@ -35,7 +35,7 @@ const Slider = () => {
       setListings(listings);
       seetLoading(false);
 
-      console.log(listings);
+      // console.log(listings);
     };
 
     fetchListings();
