@@ -14,6 +14,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Spinner from '../components/Spinner';
 
 const EditListing = () => {
+  // eslint-disable-next-line
   const [geolocationEnabled, setGeolocationEnabled] = useState(true);
   const [loading, setLoading] = useState(false);
   const [listing, setListing] = useState(false);
@@ -51,8 +52,8 @@ const EditListing = () => {
 
   const auth = getAuth();
   const navigate = useNavigate();
-  const isMounted = useRef(true);
   const params = useParams();
+  const isMounted = useRef(true);
 
   // Redirect if listing is not users
   useEffect(() => {
@@ -220,7 +221,7 @@ const EditListing = () => {
     !formDataCopy.offer && delete formDataCopy.discountedPrice;
 
     // Update Listing
-    const docRef = doc(db, 'listing', params.listingId);
+    const docRef = doc(db, 'listings', params.listingId);
     await updateDoc(docRef, formDataCopy);
     setLoading(false);
     toast.success('Listing saved');
